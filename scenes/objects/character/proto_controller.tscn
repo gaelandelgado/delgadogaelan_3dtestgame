@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://e20utqre33uw" path="res://scripts/proto_controller.gd" id="1_xjqdu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[node name="ProtoController" type="CharacterBody3D" unique_id=1161759062]
+script = ExtResource("1_xjqdu")
+can_sprint = true
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_forward"
+input_back = "move_backward"
+input_jump = "jump"
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=195041562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+material_override = SubResource("StandardMaterial3D_iof21")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1728809638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="." unique_id=785424340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=241666983]

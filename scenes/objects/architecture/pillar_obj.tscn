@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://btj8yrw6hspn6"]
+
+[ext_resource type="PackedScene" uid="uid://ca3trudjcw1j5" path="res://assets/meshes/Architecture/pillar.glb" id="1_w7ijg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vjtny"]
+height = 0.54622805
+radius = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6k56d"]
+height = 2.7182784
+radius = 0.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_alia3"]
+height = 0.81827855
+radius = 0.8
+
+[node name="pillar_obj" type="StaticBody3D" unique_id=1294967447]
+
+[node name="pillar" parent="." unique_id=1661897419 instance=ExtResource("1_w7ijg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1092810205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24951786, 0)
+shape = SubResource("CylinderShape3D_vjtny")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2121843155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.808657, 0)
+shape = SubResource("CylinderShape3D_6k56d")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1110640418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5952144, 0)
+shape = SubResource("CylinderShape3D_alia3")

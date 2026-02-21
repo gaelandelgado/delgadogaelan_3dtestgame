@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://blb6tju2raps"]
+
+[ext_resource type="PackedScene" uid="uid://dyrtjcoujh0ok" path="res://assets/meshes/Props/keyring.glb" id="1_vo2tl"]
+
+[node name="keyring_obj" type="StaticBody3D" unique_id=104449736]
+
+[node name="keyring2" parent="." unique_id=1722895365 instance=ExtResource("1_vo2tl")]

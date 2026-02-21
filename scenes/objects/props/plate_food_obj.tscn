@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://t436ktcirv3y"]
+
+[ext_resource type="PackedScene" uid="uid://cib73h32mpunq" path="res://assets/meshes/Props/plate_food.glb" id="1_adgnj"]
+
+[node name="plate_food_obj" type="StaticBody3D" unique_id=443032748]
+
+[node name="plate_food" parent="." unique_id=1617997233 instance=ExtResource("1_adgnj")]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bqvpetdwf8e6w"]
+
+[ext_resource type="PackedScene" uid="uid://dcs6nlsbf6wvw" path="res://assets/meshes/Props/torch_mounted.glb" id="1_20gao"]
+
+[node name="torch_mounted_obj" type="StaticBody3D" unique_id=242178905]
+
+[node name="torch_mounted2" parent="." unique_id=205756840 instance=ExtResource("1_20gao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42573756, 0)

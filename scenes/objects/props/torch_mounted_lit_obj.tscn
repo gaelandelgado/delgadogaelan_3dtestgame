@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://du7mx414rbdnw"]
+
+[ext_resource type="PackedScene" uid="uid://bqvpetdwf8e6w" path="res://scenes/objects/props/torch_mounted_obj.tscn" id="1_ca2f2"]
+
+[node name="torch_mounted_lit_obj" type="Node3D" unique_id=517279973]
+
+[node name="torch_mounted_obj" parent="." unique_id=242178905 instance=ExtResource("1_ca2f2")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_mounted_obj" unique_id=1057402930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9453258, 0.34065992)
+light_color = Color(0.9956148, 0.46511316, 7.70092e-07, 1)
+light_energy = 2.333
+omni_range = 8.179

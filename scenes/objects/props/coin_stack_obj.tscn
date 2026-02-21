@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpja1lcn1qofx"]
+
+[ext_resource type="PackedScene" uid="uid://yg8uyi65n3g4" path="res://assets/meshes/Props/coin_stack.glb" id="1_dr5j5"]
+
+[node name="coin_stack_obj" type="StaticBody3D" unique_id=66168735]
+
+[node name="coin_stack" parent="." unique_id=578360137 instance=ExtResource("1_dr5j5")]
