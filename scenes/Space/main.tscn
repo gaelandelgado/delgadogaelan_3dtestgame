@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cog6gp61efg73" path="res://scenes/objects/props/table_medium_obj.tscn" id="11_1n5gh"]
 [ext_resource type="PackedScene" uid="uid://cwpunv568yj5o" path="res://scenes/objects/architecture/wall_archedwindow_obj.tscn" id="11_aqe28"]
 [ext_resource type="PackedScene" uid="uid://bct22qtxqivps" path="res://scenes/objects/props/chair_obj.tscn" id="12_w340a"]
+[ext_resource type="PackedScene" uid="uid://c0dajfh7p0u2v" path="res://scenes/objects/interactable/orb_base.tscn" id="13_n5p15"]
 [ext_resource type="PackedScene" uid="uid://8sktj5d1yv40" path="res://scenes/objects/architecture/wall_cracked_obj.tscn" id="13_rvstg"]
 [ext_resource type="PackedScene" uid="uid://bmurfmyk5iqd5" path="res://scenes/objects/architecture/wall_doorway_obj.tscn" id="14_aqe28"]
 [ext_resource type="PackedScene" uid="uid://bnnsgvpnf4gjl" path="res://scenes/objects/props/crates_stacked_obj.tscn" id="15_vkt1p"]
@@ -560,3 +561,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.994957, 4.1754236, 2.098209
 
 [node name="keyring_obj" parent="." unique_id=104449736 instance=ExtResource("23_n5p15")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5.2999997, 1.7000002)
+
+[node name="orb base" parent="." unique_id=223350616 instance=ExtResource("13_n5p15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6000001, 1.7, 14.7)

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c0dajfh7p0u2v"]
+
+[ext_resource type="Script" uid="uid://c31qythm2ylhp" path="res://scripts/orb_base.gd" id="1_v6kt4"]
+[ext_resource type="PackedScene" uid="uid://d2wsm810x7irl" path="res://assets/custom/orb.fbx" id="3_paqcg"]
+[ext_resource type="Shader" uid="uid://bkcfymtkkrsdf" path="res://new_shader.gdshader" id="4_k58sa"]
+
+[sub_resource type="Gradient" id="Gradient_i8i75"]
+offsets = PackedFloat32Array(0, 0.48214287, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.78431374, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vaysf"]
+gradient = SubResource("Gradient_i8i75")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_orl53"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 0.02
+initial_velocity_max = 0.02
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.049999997
+color_ramp = SubResource("GradientTexture1D_vaysf")
+turbulence_enabled = true
+turbulence_noise_scale = 0.3
+turbulence_noise_speed_random = 0.3
+turbulence_influence_min = 0.3
+turbulence_influence_max = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_idun3"]
+render_priority = 0
+shader = ExtResource("4_k58sa")
+shader_parameter/orb_color = Color(1, 0.6, 0.1, 1)
+shader_parameter/glow_intensity = 1.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gi54x"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("ShaderMaterial_idun3")
+size = Vector2(2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v6kt4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hc76y"]
+render_priority = 0
+shader = ExtResource("4_k58sa")
+shader_parameter/orb_color = Color(1, 0.6, 0.1, 1)
+shader_parameter/glow_intensity = 1.5
+
+[node name="orb base" type="StaticBody3D" unique_id=223350616]
+script = ExtResource("1_v6kt4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1164576361]
+amount = 200
+lifetime = 3.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_orl53")
+draw_pass_1 = SubResource("PlaneMesh_gi54x")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=961366923]
+light_energy = 0.8
+omni_range = 6.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=830549154]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1660603592]
+shape = SubResource("SphereShape3D_v6kt4")
+
+[node name="orb" parent="." unique_id=943669131 instance=ExtResource("3_paqcg")]
+
+[node name="pSphere1" parent="orb" index="0" unique_id=931662057]
+surface_material_override/0 = SubResource("ShaderMaterial_hc76y")
+
+[editable path="orb"]
