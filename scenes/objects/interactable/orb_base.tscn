@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c31qythm2ylhp" path="res://scripts/orb_base.gd" id="1_v6kt4"]
 [ext_resource type="PackedScene" uid="uid://d2wsm810x7irl" path="res://assets/custom/orb.fbx" id="3_paqcg"]
-[ext_resource type="Shader" uid="uid://bkcfymtkkrsdf" path="res://new_shader.gdshader" id="4_k58sa"]
+[ext_resource type="Shader" uid="uid://bkcfymtkkrsdf" path="res://assets/new_shader.gdshader" id="4_k58sa"]
 
 [sub_resource type="Gradient" id="Gradient_i8i75"]
 offsets = PackedFloat32Array(0, 0.48214287, 1)
