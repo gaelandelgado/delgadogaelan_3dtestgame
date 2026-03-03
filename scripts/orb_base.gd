@@ -15,7 +15,7 @@ var bob_height: float = 0.1
 
 func _ready():
 	base_y = position.y
-	# Scale the whole orb — base mesh always stays at 1m
+	# Scale the whole orb, base mesh always stays at 1m
 	scale = Vector3.ONE * orb_size
 
 	# Push color and intensity into the glow shader

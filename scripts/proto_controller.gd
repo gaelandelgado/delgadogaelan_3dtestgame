@@ -20,11 +20,11 @@ extends CharacterBody3D
 ## Look around rotation speed.
 @export var look_speed : float = 0.002
 ## Normal speed.
-@export var base_speed : float = 7.0
+@export var base_speed : float = 4
 ## Speed of jump.
-@export var jump_velocity : float = 4.5
+@export var jump_velocity : float = 4.2
 ## How fast do we run?
-@export var sprint_speed : float = 10.0
+@export var sprint_speed : float = 7
 ## How fast do we freefly?
 @export var freefly_speed : float = 25.0
 
@@ -48,6 +48,7 @@ var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
+var has_key: bool = false
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head

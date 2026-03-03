@@ -16,14 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://bct22qtxqivps" path="res://scenes/objects/props/chair_obj.tscn" id="12_w340a"]
 [ext_resource type="PackedScene" uid="uid://c0dajfh7p0u2v" path="res://scenes/objects/interactable/orb_base.tscn" id="13_n5p15"]
 [ext_resource type="PackedScene" uid="uid://8sktj5d1yv40" path="res://scenes/objects/architecture/wall_cracked_obj.tscn" id="13_rvstg"]
-[ext_resource type="PackedScene" uid="uid://bmurfmyk5iqd5" path="res://scenes/objects/architecture/wall_doorway_obj.tscn" id="14_aqe28"]
 [ext_resource type="PackedScene" uid="uid://bnnsgvpnf4gjl" path="res://scenes/objects/props/crates_stacked_obj.tscn" id="15_vkt1p"]
 [ext_resource type="PackedScene" uid="uid://dyvdsa3wdijnx" path="res://scenes/objects/props/barrel_obj.tscn" id="16_lyxm0"]
 [ext_resource type="PackedScene" uid="uid://du7mx414rbdnw" path="res://scenes/objects/props/torch_mounted_lit_obj.tscn" id="19_aqe28"]
 [ext_resource type="PackedScene" uid="uid://c7s67y5gq15l6" path="res://scenes/objects/props/table_small_obj.tscn" id="19_lyxm0"]
 [ext_resource type="PackedScene" uid="uid://ce866vc1m8md" path="res://scenes/objects/architecture/ceiling_obj.tscn" id="20_vkt1p"]
 [ext_resource type="PackedScene" uid="uid://bkv6spvbjg5fm" path="res://scenes/objects/architecture/floor_wood_obj.tscn" id="21_aqe28"]
-[ext_resource type="PackedScene" uid="uid://blb6tju2raps" path="res://scenes/objects/props/keyring_obj.tscn" id="23_n5p15"]
+[ext_resource type="PackedScene" uid="uid://bmd4rft3lxpd1" path="res://scenes/objects/interactable/locked_door.tscn" id="24_gmgb6"]
+[ext_resource type="PackedScene" uid="uid://b74s26herlm7" path="res://scenes/objects/interactable/key.tscn" id="24_n5p15"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lyxm0"]
 panorama = ExtResource("1_rvstg")
@@ -51,7 +51,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.5, 0)
 use_collision = true
 
-[node name="ProtoController" parent="." unique_id=1161759062 instance=ExtResource("2_cufqn")]
+[node name="ProtoController" parent="." unique_id=1161759062 groups=["player"] instance=ExtResource("2_cufqn")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.3, 0.2, 2.3999999)
 
 [node name="floors" type="Node3D" parent="." unique_id=1073118448]
@@ -368,9 +368,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.50
 [node name="wall_cracked_obj" parent="props" unique_id=621095077 instance=ExtResource("13_rvstg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.2, 16.5)
 
-[node name="wall_doorway_obj" parent="props" unique_id=380453279 instance=ExtResource("14_aqe28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0.2, 16.5)
-
 [node name="wall_corner_obj" parent="props" unique_id=1355059924 instance=ExtResource("3_4vu0w")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.5, 0.2, 16.5)
 
@@ -559,8 +556,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.994957, 4.1754236, 2.098209
 [node name="floor_wood_obj14" parent="floors_upstairs" unique_id=76405554 instance=ExtResource("21_aqe28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.994957, 4.1754236, 2.098209)
 
-[node name="keyring_obj" parent="." unique_id=104449736 instance=ExtResource("23_n5p15")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5.2999997, 1.7000002)
+[node name="Interactable" type="Node3D" parent="." unique_id=894715557]
 
-[node name="orb base" parent="." unique_id=223350616 instance=ExtResource("13_n5p15")]
+[node name="Key" parent="Interactable" unique_id=940167919 instance=ExtResource("24_n5p15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5.3, 1.7)
+
+[node name="orb base" parent="Interactable" unique_id=223350616 instance=ExtResource("13_n5p15")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6000001, 1.7, 14.7)
+
+[node name="LockedDoor" parent="." unique_id=1557006324 instance=ExtResource("24_gmgb6")]
+transform = Transform3D(-0.9999512, 0, -0.009878457, 0, 1, 0, 0.009878457, 0, -0.9999512, 12.511383, 0.18310249, 16.52088)
